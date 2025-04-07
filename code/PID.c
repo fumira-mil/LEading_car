@@ -152,8 +152,12 @@ void PID_output(void)
 //    if (Increase2 < 0) Increase2 = 0.02*Increase1;
 //    if (Increase1 > 2500) Increase1 = 3000;
 //    if (Increase2 > 2500) Increase2 = 3000;
-    Motor_Left(Increase1);
-    Motor_Right(Increase2);
+    if(Car_GO_Flag == 1)
+    {
+        Motor_Left(Increase1);
+        Motor_Right(Increase2);
+    }
+
 //    Motor_Left(1000);
 //    Motor_Right(1000);
 

@@ -50,7 +50,8 @@ void GANJIANG_Init(void)
    Encoder_Init();
    //屏幕初始化
    ips200_init(IPS200_TYPE_SPI);
-
+   //Flash 读取
+   Read_Flash();//读取内部flash中的数据
    //ADC_init 初始化A11引脚
    adc_init(ADC0_CH11_A11, ADC_12BIT);
 
@@ -79,6 +80,7 @@ void GANJIANG_Flyer(void)
 
 //    ips200_displayimage03x(mt9v03x_image[0], MT9V03X_W, MT9V03X_H);
     //Wireless_uart_readAndsent();
+    UI_init();
 }
 
 
